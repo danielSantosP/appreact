@@ -12,7 +12,7 @@ const Teste = () => {
   }
 }
 
-const App = () => {
+const ComponentsApp = () => {
   return (
     <>
       <Teste />
@@ -23,4 +23,4 @@ const App = () => {
   )
 };
 
-export default App;
+export default ComponentsApp;
