@@ -1,8 +1,9 @@
 import React from 'react'
 
-const Button = () => {
+const Button = (props) => {
+  console.log(props)
   return (
-    <button>Enviar</button>
+    <button>Clique</button>
   )
 }
 
