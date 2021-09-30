@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Modal = ({modal, setModal}) => {
+const UseStateModal = ({modal, setModal}) => {
   if(modal === true)
     return (
       <div>
@@ -11,4 +11,4 @@ const Modal = ({modal, setModal}) => {
   return null
 }
 
-export default Modal
+export default UseStateModal

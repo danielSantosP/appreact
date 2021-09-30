@@ -1,18 +1,20 @@
 import React from 'react'
-import ButtonModal from './hooks/useState/UseStateButtonModal'
-import Modal from './hooks/useState/UseStateModal'
 
-const App = () => {
+const UseStateApp = () => {
+ const [contar, setContar] = React.useState(1)
+ const [items, setItems] = React.useState(['Item 1'])
 
-      const [modal, setModal] = React.useState(false)
+ function handleClick(){
+  setContar((contar)=>{
+    return contar + 1
+  })
+  setItems((items) => [...items, 'Item' + (contar + 1)])
+ }
   return (
-    <div>
-      <Modal modal={modal} setModal={setModal} />
-      <ButtonModal setModal={setModal}/>
-    </div>
-  )
+  <div>
+    {items.map(item => <li key={item}>{item}</li>)}
+    <button onClick={handleClick}>{contar}</button>
+  </div>)
 }
  
-
-
-export default App
+export default UseStateApp
