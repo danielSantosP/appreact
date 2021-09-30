@@ -2,24 +2,31 @@ import React from 'react'
 import Produto from './hooks/useEffect/UseEffectProduto'
 
 const UseEffectApp = () => {
-  const [ativo, setAtivo] = React.useState(false)
+  const [produto, setProduto] = React.useState(null)
+
+  function handleClick({target}){
+    setProduto(target.innerText)
+  }
 
   React.useEffect(()=>{
-
-    function handleScroll(event){
-      console.log(event)
+    const produtoLocal = window.localStorage.getItem('produto')
+    if(produtoLocal){
+      setProduto(produtoLocal)
     }
-    window.addEventListener('scroll', handleScroll)
-    return ()=>{
-      window.removeEventListener('scroll', handleScroll)
+  },[])
+  
+  React.useEffect(()=>{
+    if(produto){
+      window.localStorage.setItem('produto', produto)
     }
-  }, [])
-
+  },[produto])
 
   return (
     <div>
-      {ativo && <Produto />}
-      <button onClick={()=>setAtivo(!ativo)}>Ativar</button>
+      <h1>Preferência: {produto}</h1>
+      <button style={{marginRight: '1rem'}} onClick={handleClick}>Notebook</button>
+      <button onClick={handleClick}>Smartphone</button>
+      {produto && <Produto produto={produto} />}
     </div>
   )
 }
