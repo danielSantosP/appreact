@@ -1,5 +1,5 @@
 import React from 'react'
-import Input from './Form/Input'
+import Input from './forms/components/Form/Input'
 
 const InputApp = () => {
   const [nome, setNome] = React.useState('')
