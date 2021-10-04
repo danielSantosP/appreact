@@ -12,8 +12,6 @@ const Header = () => {
     <nav>
       <NavLink to="/" activeStyle={{color: 'red'}} end>Home</NavLink>{' | '}
       <NavLink to="sobre"> Sobre</NavLink>{' | '}
-      <NavLink to="contato" activeStyle={{color: 'green'}}> Contato</NavLink>{' | '}
-      <NavLink to="login" activeStyle={{color: 'blue'}}> Login</NavLink>{' | '}
     </nav>
   )
 }
